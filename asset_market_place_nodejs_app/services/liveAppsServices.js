@@ -96,7 +96,7 @@ module.exports = {
 	*/
 	doCleanResponse: function doCleanResponse(stringObj) {
 		//TODO becarefull with version
-		stringObj = stringObj.replace(/_v1/g, "");
+		stringObj = stringObj.replace(/_v./g, "");
 		//TODO not sure necessary
 		stringObj = stringObj.replace(/\n/g, "");
 
