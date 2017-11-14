@@ -18,7 +18,9 @@
         "body-parser": "^1.15.0",
         "swaggerize-express": "^4.0.0",
         "swagmock": "~0.0.2",
-        "axios": "^0.17.0"
+        "axios": "^0.17.0",
+        "https": "~1.0.0",
+        "sync-request": "^4.1.0"
     },
     "devDependencies": {
         "eslint": "^2",
