@@ -1,0 +1,44 @@
+{
+    "name": "asset-market-place-nodejs-app-1510164359836",
+    "description": "",
+    "version": "1.0.0",
+    "author": "creatorName <a@b.com>",
+    "contributors": [],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/githubUser/asset-market-place-nodejs-app-1510164359836.git"
+    },
+    "bugs": "http://github.com/githubUser/asset-market-place-nodejs-app-1510164359836/issues",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "dependencies": {
+        "cors": "^2.8.1",
+        "express": "^4.0.0",
+        "body-parser": "^1.15.0",
+        "swaggerize-express": "^4.0.0",
+        "swagmock": "~0.0.2",
+        "axios": "^0.17.0",
+        "https": "~1.0.0",
+        "sync-request": "^4.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^2",
+        "istanbul": "~0.4.3",
+        "is-my-json-valid": "^2.13.1",
+        "js-yaml": "^3.2.6",
+        "supertest": "^1.2.0",
+        "swagger-parser": "^3.4.1",
+        "tape": "^4"
+    },
+    "scripts": {
+        "test": "tape 'tests/**/*.js'",
+        "cover": "istanbul cover tape -- 'tests/**/*.js'",
+        "lint": "eslint .",
+        "regenerate": "yo swaggerize:test --framework express --apiPath './config/swagger.json'"
+    },
+    "generator-swaggerize": {
+        "version": "3.1.0"
+    },
+    "main": "./server"
+}
