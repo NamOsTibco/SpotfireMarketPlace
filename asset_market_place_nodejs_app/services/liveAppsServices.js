@@ -109,6 +109,13 @@ module.exports = {
 	},
 
 	doGet: function doGet(apiUrl) {
+
+		//TODO how to keep authentication 
+		//TODO be carefull when not authorized anymore => we will have to reauthenticate
+		if (loginDetails.cookie == null ) {
+			this.performLogin();
+		}
+
 		// Load the claims for this user
 		var requestUrl = liveAppsUrl + apiUrl;
 		console.log("**********************************");

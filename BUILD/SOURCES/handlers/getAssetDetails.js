@@ -25,7 +25,7 @@ module.exports = {
 
 
 
-    liveAppsServices.performLogin();
+    //liveAppsServices.performLogin();
 
 
     var apiUrl = '/case/cases?$filter=applicationId eq 740 and typeId eq 1&%24sandbox=31';
