@@ -29,7 +29,7 @@ module.exports = {
 
 
     var apiUrl = '/case/cases?$filter=applicationId eq 740 and typeId eq 1&%24sandbox=31';
-    var response = liveAppsServices.doGet(apiUrl);
+    var response = liveAppsServices.doGetCase(apiUrl);
 
     console.log("**********************************");
     console.log("Response :  " + JSON.stringify(response, null, 2));
@@ -38,10 +38,14 @@ module.exports = {
     var data = { "responses": [] };
 
     for (var i = 0; i < response.length; i++) {
-        data.responses.push(response[i].casedata.Asset);
+        //TODO make this more performant
+        var curAsset = response[i].casedata.Asset;
+        curAsset.caseReference = response[i].caseReference;
+        curAsset.ImplementationFile = "https://eu-west-1.integration.cloud.tibcoapps.com/sm5q2ml2hdharerbhmr6i2mawodtciri/getAssetFile";
+        data.responses.push(curAsset);
     }
 
-   
+    console.log("OooooOOO");
 
     /*data ={ "responses" : [{
         "name" : "Simple Page layout Template 1",

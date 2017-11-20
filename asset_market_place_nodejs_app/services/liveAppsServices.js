@@ -130,8 +130,23 @@ module.exports = {
 		}
 		console.log('Request Response: ' + curRequest.body.toString('utf-8'));
 
+		
 
-		var responseObj = JSON.parse(curRequest.body.toString('utf-8'));
+		return (curRequest.body.toString('utf-8'));
+	},
+
+	doGetJson: function doGetJson(apiUrl) {
+		
+		 var response = this.doGet(apiUrl);
+		 var responseObj = JSON.parse(response);
+
+
+		return (responseObj);
+	},
+
+	doGetCase: function doGetCase(apiUrl) {
+		
+		 var responseObj = this.doGetJson(apiUrl);
 
 		for (var i = 0; i < responseObj.length; i++) {
 			//TODO refactor curObject to reduce access=> performance
