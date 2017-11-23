@@ -270,6 +270,28 @@
                 ],
                 "operationId": "getGetAssetFile"
             }
+        },"/isOrgUser": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "userEmail",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "type": "string",
+                        "format": ""
+                    }
+                ],
+                "operationId": "getIsOrgUser"
+            }
         }
     
     },

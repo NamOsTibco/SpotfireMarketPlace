@@ -15,6 +15,8 @@ var liveAppsUser = process.env.LIVEAPPSUSER || 'segliveapps@outlook.com';
 var liveAppsPw = process.env.LIVEAPPSPW || 'Tibco123.';
 var tibcoAccountUrl = process.env.TIBCOACCOUNTURL || 'https://sso-ext.tibco.com';
 var liveAppsUrl = process.env.LIVEAPPSURL || 'https://eu.liveapps.cloud.tibco.com:443';
+//Account URL (TCI account request)
+var accountAppsUrl = process.env.LIVEAPPSURL || 'https://eu.account.cloud.tibco.com:443';
 
 // LiveApps App Config
 var sandboxId = process.env.SANDBOXID || '31';
@@ -111,7 +113,7 @@ module.exports = {
 		return JSON.parse(stringObj);
 	},
 
-	doGet: function doGet(apiUrl) {
+	doGet: function doGet(service, apiUrl) {
 
 		//TODO how to keep authentication 
 		//TODO be carefull when not authorized anymore => we will have to reauthenticate
@@ -129,8 +131,15 @@ module.exports = {
 			loginDetails.lastAuthenticatedCall = Date.now();
 		}
 
-		// Load the claims for this user
-		var requestUrl = liveAppsUrl + apiUrl;
+		// Load API
+		var requestUrl = "";
+		if (service == "liveapps") {
+			requestUrl = liveAppsUrl + apiUrl;
+		} else if (service == "account") {
+			requestUrl = accountAppsUrl + apiUrl;
+		}
+		 
+	
 		console.log("**********************************");
 		console.log("Request to be done : " + requestUrl);
 		console.log("**********************************");
@@ -155,12 +164,13 @@ module.exports = {
 
 		
 
-		return (curRequest.body.toString('utf-8'));
+		//return (curRequest.body.toString('utf-8'));
+		return (curRequest.body);
 	},
 
-	doGetJson: function doGetJson(apiUrl) {
+	doGetJson: function doGetJson(service,apiUrl) {
 		
-		 var response = this.doGet(apiUrl);
+		 var response = this.doGet(service,apiUrl);
 		 var responseObj = JSON.parse(response);
 
 
@@ -169,7 +179,7 @@ module.exports = {
 
 	doGetCase: function doGetCase(apiUrl) {
 		
-		 var responseObj = this.doGetJson(apiUrl);
+		 var responseObj = this.doGetJson("liveapps",apiUrl);
 
 		for (var i = 0; i < responseObj.length; i++) {
 			//TODO refactor curObject to reduce access=> performance

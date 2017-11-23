@@ -26,7 +26,7 @@ module.exports = {
 
 
     var apiUrl = '/webresource/rest/folders/cases/64411/artifacts/?$sandbox=31';
-    var response = liveAppsServices.doGetJson(apiUrl);
+    var response = liveAppsServices.doGetJson("liveapps",apiUrl);
 
     console.log("**********************************");
     console.log("Response :  " + JSON.stringify(response, null, 2));

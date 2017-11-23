@@ -1,22 +1,22 @@
 'use strict';
-var dataProvider = require('../data/getAssetFile.js');
+var dataProvider = require('../data/isOrgUser.js');
 
 var liveAppsServices = require('../services/liveAppsServices.js');
 
 var axios = require("axios");
 
 /**
- * Operations on /getAssetFile
+ * Operations on /isOrgUser
  */
 module.exports = {
   /**
    * summary: 
    * description: 
-   * parameters: caseRef, sandBox, fileName
+   * parameters: 
    * produces: application/json
    * responses: 200
    */
-  get: function getGetAssetFile(req, res, next) {
+  get: function getIsOrgUser(req, res, next) {
       /**
        * Get the data for response 200
        * For response `default` status 200 is used.
@@ -24,8 +24,8 @@ module.exports = {
     
       
 
-    var apiUrl = '/webresource/folders/' + req.query.caseRef + '/' + req.query.sandBox + '/' + req.query.fileName + '?$download=true';
-    var response = liveAppsServices.doGet("liveapps",apiUrl);
+    var apiUrl = '/tsc-utd/v1/accounts/01BHEWGDNHCPGS8PYZMMGKBAMN/users';
+    var response = liveAppsServices.doGetJson("account", apiUrl);
 
     console.log("**********************************");
     console.log("Response :  " + JSON.stringify(response, null, 2));
