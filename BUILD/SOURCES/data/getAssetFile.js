@@ -7,10 +7,10 @@ module.exports = {
     /**
      * summary: 
      * description: 
-     * parameters: 
+     * parameters: caseRef, sandBox, fileName
      * produces: application/json
      * responses: 200
-     * operationId: getGetAssetFiles
+     * operationId: getGetAssetFile
      */
     get: {
         200: function (req, res, callback) {
@@ -20,7 +20,7 @@ module.exports = {
              */
             Mockgen().responses({
                 path: '/getAssetFile',
-                operation: 'get',
+                operation: 'post',
                 response: '200'
             }, callback);
         }

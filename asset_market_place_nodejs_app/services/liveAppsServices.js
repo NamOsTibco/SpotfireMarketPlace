@@ -33,6 +33,7 @@ var liveAppsActivityId = process.env.LIVEAPPSACTIVITYID || 'Z83CGdFT4Eeec68g_fwb
 var loginDetails = {
 	login: liveAppsUser,
 	password: liveAppsPw,
+	lastAuthenticatedCall : Date.now(),
 	cookie: null,
 	firstName: '',
 	lastName: '',
@@ -86,6 +87,8 @@ module.exports = {
 		loginDetails.firstName = authDetails.firstName;
 		loginDetails.lastName = authDetails.lastName;
 
+		loginDetails.lastAuthenticatedCall = Date.now();
+
 
 		return loginDetails;
 	},
@@ -112,8 +115,18 @@ module.exports = {
 
 		//TODO how to keep authentication 
 		//TODO be carefull when not authorized anymore => we will have to reauthenticate
-		if (loginDetails.cookie == null ) {
+		var dateNow = Date.now();
+		var diffLastCallInMinutes = Math.abs(dateNow - loginDetails.lastAuthenticatedCall ) / (60*1000);
+		console.log("*****************************");
+		console.log("******* diffLastCallInMinutes : " + diffLastCallInMinutes);
+		console.log("*****************************");
+
+		if (loginDetails.cookie == null) {
 			this.performLogin();
+		} else if (diffLastCallInMinutes > 15){
+			this.performLogin();
+		} else {
+			loginDetails.lastAuthenticatedCall = Date.now();
 		}
 
 		// Load the claims for this user
@@ -129,6 +142,9 @@ module.exports = {
 			}
 		});
 		console.log('request Status Code = ' + curRequest.statusCode);
+		/*
+		HANDLE ERROR CODE
+		TO CLEAN */
 		if (curRequest.statusCode != 200) {
 			loginDetails.errorCode = resOAuth.statusCode;
 			loginDetails.errorMsg = resOAuth.body.toString('utf-8');

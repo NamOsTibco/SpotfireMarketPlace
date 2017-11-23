@@ -12,20 +12,19 @@ module.exports = {
   /**
    * summary: 
    * description: 
-   * parameters: 
+   * parameters: caseRef, sandBox, fileName
    * produces: application/json
    * responses: 200
    */
   get: function getGetAssetFile(req, res, next) {
-    /**
-     * Get the data for response 200
-     * For response `default` status 200 is used.
-     */
+      /**
+       * Get the data for response 200
+       * For response `default` status 200 is used.
+       */
     
-    liveAppsServices.performLogin();
+      
 
-
-    var apiUrl = '/webresource/folders/64411/31/createPage.py?$download=true';
+    var apiUrl = '/webresource/folders/' + req.query.caseRef + '/' + req.query.sandBox + '/' + req.query.fileName + '?$download=true';
     var response = liveAppsServices.doGet(apiUrl);
 
     console.log("**********************************");

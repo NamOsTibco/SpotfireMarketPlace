@@ -32,7 +32,7 @@ module.exports = {
     //liveAppsServices.performLogin();
 
 
-    var apiUrl = '/case/cases?$filter=applicationId eq 740 and typeId eq 1&%24sandbox=31';
+    var apiUrl = '/case/cases?$filter=applicationId eq 740 and typeId eq 1&%24sandbox=31&%24search=Provision';
     var response = liveAppsServices.doGetCase(apiUrl);
 
     console.log("**********************************");
@@ -48,7 +48,7 @@ module.exports = {
 
         //TODO add req.hostname + req.path
         //curAsset.ImplementationFile = "https://eu-west-1.integration.cloud.tibcoapps.com/sm5q2ml2hdharerbhmr6i2mawodtciri/getAssetFile";
-        curAsset.ImplementationFile = req.hostname + ":"  + req.socket.localPort + req.path + "/getAssetFile";
+        //curAsset.ImplementationFile = req.hostname + ":"  + req.socket.localPort + req.path + "/getAssetFile";
         
         data.responses.push(curAsset);
     }
