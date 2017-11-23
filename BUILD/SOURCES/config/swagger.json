@@ -270,6 +270,30 @@
                 ],
                 "operationId": "getGetAssetFile"
             }
+        },"/isOrgUser": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "",
+                        "required": true,
+                        "type": "string",
+                        "format": ""
+                    }
+                ],
+                "operationId": "getIsOrgUser",
+                "summary": "Is user email know is the organisation",
+                "description": "Is user email know is the organisation"
+            }
         }
     
     },

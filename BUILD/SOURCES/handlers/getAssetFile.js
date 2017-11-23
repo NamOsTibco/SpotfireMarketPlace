@@ -25,7 +25,7 @@ module.exports = {
       
 
     var apiUrl = '/webresource/folders/' + req.query.caseRef + '/' + req.query.sandBox + '/' + req.query.fileName + '?$download=true';
-    var response = liveAppsServices.doGet(apiUrl);
+    var response = liveAppsServices.doGet("liveapps",apiUrl);
 
     console.log("**********************************");
     console.log("Response :  " + JSON.stringify(response, null, 2));

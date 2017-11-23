@@ -282,15 +282,17 @@
                 },
                 "parameters": [
                     {
-                        "name": "userEmail",
+                        "name": "email",
                         "in": "query",
                         "description": "",
-                        "required": false,
+                        "required": true,
                         "type": "string",
                         "format": ""
                     }
                 ],
-                "operationId": "getIsOrgUser"
+                "operationId": "getIsOrgUser",
+                "summary": "Is user email know is the organisation",
+                "description": "Is user email know is the organisation"
             }
         }
     
