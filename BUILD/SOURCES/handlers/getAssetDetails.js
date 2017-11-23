@@ -1,5 +1,6 @@
 'use strict';
 var dataProvider = require('../data/getAssetDetails.js');
+var Logger = require('./../util/logger');
 
 var liveAppsServices = require('../services/liveAppsServices.js');
 
@@ -23,7 +24,10 @@ module.exports = {
      */
 
 
-
+    Logger.log(Logger.LOG_INFO, "**************************************");
+    Logger.log(Logger.LOG_INFO, "*** Req URL : " + JSON.stringify(req.headers));
+    Logger.log(Logger.LOG_INFO, "*** Req parsedUrl : " + JSON.stringify(req._parsedUrl));
+    Logger.log(Logger.LOG_INFO, "**************************************");
 
     //liveAppsServices.performLogin();
 
@@ -41,7 +45,11 @@ module.exports = {
         //TODO make this more performant
         var curAsset = response[i].casedata.Asset;
         curAsset.caseReference = response[i].caseReference;
-        curAsset.ImplementationFile = "https://eu-west-1.integration.cloud.tibcoapps.com/sm5q2ml2hdharerbhmr6i2mawodtciri/getAssetFile";
+
+        //TODO add req.hostname + req.path
+        //curAsset.ImplementationFile = "https://eu-west-1.integration.cloud.tibcoapps.com/sm5q2ml2hdharerbhmr6i2mawodtciri/getAssetFile";
+        curAsset.ImplementationFile = req.hostname + ":"  + req.socket.localPort + req.path + "/getAssetFile";
+        
         data.responses.push(curAsset);
     }
 

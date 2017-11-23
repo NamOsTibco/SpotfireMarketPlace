@@ -76,7 +76,9 @@
                     }
                 },
                 "parameters": [],
-                "operationId": "getGetAssetDetails"
+                "operationId": "getGetAssetDetails",
+                "summary": "Get AssetDetails Summary",
+                "description": "Get AssetDetails Description"
             }
         },
         "/listAssets": {
@@ -150,7 +152,9 @@
                     }
                 },
                 "parameters": [],
-                "operationId": "getGetAssets"
+                "operationId": "getGetAssets",
+                "summary": "ListAsset Summary",
+                "description": "ListAsset Description"
             }
         },
         "/getAssetFiles": {
@@ -224,7 +228,9 @@
                     }
                 },
                 "parameters": [],
-                "operationId": "getGetAssetFiles"
+                "operationId": "getGetAssetFiles",
+                "summary": "Get Asset Files Summary",
+                "description": "Get Asset Files Description"
             }
         },"/getAssetFile": {
             "get": {
@@ -297,7 +303,9 @@
                     }
                 },
                 "parameters": [],
-                "operationId": "getGetAssetFile"
+                "operationId": "getGetAssetFile",
+                "summary": "Get Asset File Summary",
+                "description": "Get Asset File Description"
             }
         }
     },

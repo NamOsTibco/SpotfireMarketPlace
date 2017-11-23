@@ -1,1 +1,202 @@
-{"name":"asset_market_place_nodejs_app_1510164359836","description":"asset_market_place_nodejs_app_1510164359836 description.","version":"1.0","type":"nodejs-app","resources":{"physicalMemory":1024,"totalMemory":4096,"cpuQuota":25},"endpoints":[{"primary":true,"protocol":"http","port":"8000","public":true,"swagger":{"swagger":"2.0","info":{"version":"1.0.0","title":"AssetMarketPlace"},"paths":{"/getAssetDetails":{"get":{"produces":["application/json"],"responses":{"200":{"description":"Success response","schema":{"$ref":"#/definitions/AssetDetails"}}},"parameters":[],"operationId":"getGetAssetDetails"}},"/listAssets":{"get":{"produces":["application/json"],"responses":{"200":{"description":"OK","schema":{"$ref":"#/definitions/AssetDetails"}}},"parameters":[],"operationId":"getGetAssets"}}},"definitions":{"GiveNewSchemaNameHere":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string","default":"Simple Page layout Template 1"},"description":{"type":"string","default":"Simple Page layout Template 1"},"icon":{"type":"string","default":"layout1.png"},"category":{"type":"string","default":"Template"},"subcategory":{"type":"string","default":""},"tags":{"type":"array","items":{}},"date":{"type":"string","default":"10/10/2017"},"author":{"type":"string","default":"NamOs"},"version":{"type":"string","default":"1.0"},"imageDesc":{"type":"string","default":"layout1.png"},"implementationType":{"type":"string","default":"PYTHON"},"like":{"type":"integer","default":1},"implementationFile":{"type":"string","default":"http://localhost:8888/spotfireFramework/customLibs/ironPythonLib/templateLayout1.py"}}}},"AssetDetails":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string","default":"Simple Page layout Template 1"},"description":{"type":"string","default":"Simple Page layout Template 1"},"icon":{"type":"string","default":"layout1.png"},"category":{"type":"string","default":"Template"},"subcategory":{"type":"string","default":""},"tags":{"type":"array","items":{}},"date":{"type":"string","default":"10/10/2017"},"author":{"type":"string","default":"NamOs"},"version":{"type":"string","default":"1.0"},"imageDesc":{"type":"string","default":"layout1.png"},"implementationType":{"type":"string","default":"PYTHON"},"like":{"type":"integer","default":1},"implementationFile":{"type":"string","default":"http://localhost:8888/spotfireFramework/customLibs/ironPythonLib/templateLayout1.py"}}}}}},"type":"public","pingable":false,"spec":{"name":"AssetMarketPlace","version":"1.0.0"}}]}
+{
+    "name": "asset_market_place_nodejs_app_1510164359836",
+    "description": "asset_market_place_nodejs_app_1510164359836 description.",
+    "version": "1.0",
+    "type": "nodejs-app",
+    "resources": {
+      "physicalMemory": 1024,
+      "totalMemory": 4096,
+      "cpuQuota": 25
+    },
+    "endpoints": [
+      {
+        "primary": true,
+        "protocol": "http",
+        "port": "8000",
+        "public": true,
+        "swagger": {
+          "swagger": "2.0",
+          "info": {
+            "version": "1.0.0",
+            "title": "AssetMarketPlace"
+          },
+          "paths": {
+            "\/getAssetDetails": {
+              "get": {
+                "produces": [
+                  "application\/json"
+                ],
+                "responses": {
+                  "200": {
+                    "description": "Success response",
+                    "schema": {
+                      "$ref": "#\/definitions\/AssetDetails"
+                    }
+                  }
+                },
+                "parameters": [
+                  
+                ],
+                "operationId": "getGetAssetDetails",
+                "summary": "GetAssetDetails Summary",
+                "description": "GetAssetDetails Description"
+              }
+            },
+            "\/listAssets": {
+              "get": {
+                "produces": [
+                  "application\/json"
+                ],
+                "responses": {
+                  "200": {
+                    "description": "OK",
+                    "schema": {
+                      "$ref": "#\/definitions\/AssetDetails"
+                    }
+                  }
+                },
+                "parameters": [
+                  
+                ],
+                "operationId": "getGetAssets",
+                "summary": "List Asset Summary",
+                "description": "List Asset Description"
+              }
+            }
+          },
+          "definitions": {
+            "GiveNewSchemaNameHere": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "default": "Simple Page layout Template 1"
+                  },
+                  "description": {
+                    "type": "string",
+                    "default": "Simple Page layout Template 1"
+                  },
+                  "icon": {
+                    "type": "string",
+                    "default": "layout1.png"
+                  },
+                  "category": {
+                    "type": "string",
+                    "default": "Template"
+                  },
+                  "subcategory": {
+                    "type": "string",
+                    "default": ""
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      
+                    }
+                  },
+                  "date": {
+                    "type": "string",
+                    "default": "10\/10\/2017"
+                  },
+                  "author": {
+                    "type": "string",
+                    "default": "NamOs"
+                  },
+                  "version": {
+                    "type": "string",
+                    "default": "1.0"
+                  },
+                  "imageDesc": {
+                    "type": "string",
+                    "default": "layout1.png"
+                  },
+                  "implementationType": {
+                    "type": "string",
+                    "default": "PYTHON"
+                  },
+                  "like": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "implementationFile": {
+                    "type": "string",
+                    "default": "http:\/\/localhost:8888\/spotfireFramework\/customLibs\/ironPythonLib\/templateLayout1.py"
+                  }
+                }
+              }
+            },
+            "AssetDetails": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "default": "Simple Page layout Template 1"
+                  },
+                  "description": {
+                    "type": "string",
+                    "default": "Simple Page layout Template 1"
+                  },
+                  "icon": {
+                    "type": "string",
+                    "default": "layout1.png"
+                  },
+                  "category": {
+                    "type": "string",
+                    "default": "Template"
+                  },
+                  "subcategory": {
+                    "type": "string",
+                    "default": ""
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      
+                    }
+                  },
+                  "date": {
+                    "type": "string",
+                    "default": "10\/10\/2017"
+                  },
+                  "author": {
+                    "type": "string",
+                    "default": "NamOs"
+                  },
+                  "version": {
+                    "type": "string",
+                    "default": "1.0"
+                  },
+                  "imageDesc": {
+                    "type": "string",
+                    "default": "layout1.png"
+                  },
+                  "implementationType": {
+                    "type": "string",
+                    "default": "PYTHON"
+                  },
+                  "like": {
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "implementationFile": {
+                    "type": "string",
+                    "default": "http:\/\/localhost:8888\/spotfireFramework\/customLibs\/ironPythonLib\/templateLayout1.py"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "type": "public",
+        "pingable": false,
+        "spec": {
+          "name": "AssetMarketPlace",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  }
